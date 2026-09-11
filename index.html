@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="refined.css">
   <link rel="stylesheet" href="festival.css">
   <script defer src="data.js"></script>
-  <script defer src="engine.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="service.js"></script>
+  <script defer src="production-app.js"></script>
 </head>
 <body>
   <main class="omikuji">
@@ -33,7 +34,7 @@
       </div>
       <p class="intro-copy">仕事運も、今日の相棒も。<br>ひとつ引いて、のぞいてみよう。</p>
       <button class="primary" id="draw-button" type="button">おみくじを引く <span aria-hidden="true">→</span></button>
-      <p class="trial-note">おためし版・何度でも引けます</p>
+      <p class="trial-note">同じブラウザで1日1回・当日限り</p>
     </section>
     <section id="result" class="result" hidden aria-labelledby="result-title">
       <div class="fortune-hero">
@@ -51,14 +52,14 @@
       <section class="lucky wear-section"><img class="wear-icon" src="icon-workwear.png" width="1254" height="1254" alt=""><div><h3>今日のラッキー作業服</h3><p class="lucky-name" id="wear-name"></p><p class="lucky-message" id="wear-message"></p></div></section>
       <section class="benefit-section" aria-labelledby="benefit-heading"><div class="section-heading"><img src="icon-benefit.png" width="1254" height="1254" alt=""><h3 id="benefit-heading">本日のご利益</h3></div>
         <div class="benefit"><img id="benefit-frame" width="1536" height="1024" alt=""><div class="benefit-copy"><p id="benefit-top"></p><p id="benefit-main"></p></div></div>
-        <p class="terms" id="terms"></p><p class="benefit-notice">おためし版のため、店頭では使用できません。</p>
+        <p class="terms" id="terms"></p><p class="benefit-notice" id="coupon-state"></p><p id="coupon-date"></p><p id="coupon-number" style="overflow-wrap:anywhere;font-family:monospace"></p><p>特典はスタッフの使用確認後に適用します。スクリーンショットのみではご利用いただけません。</p>
       </section>
-      <button class="primary" id="again-button" type="button">もう一度引く <span aria-hidden="true">↻</span></button>
+      <button class="primary" id="again-button" type="button">券の状態を確認</button>
     </section>
     <p id="status" class="status" role="status" aria-live="polite"></p>
     <p id="error" class="error" role="alert" hidden></p>
     <footer><span>今日も一日、ご安全に。</span><small>たまゆら くみやま野村店</small></footer>
-    <noscript><p class="error">おみくじを引くにはJavaScriptを有効にしてください。</p></noscript>
+    <details style="margin:24px 12px;font-size:13px"><summary>参加方法と情報の取り扱い</summary><p>ログインは不要です。氏名・メールアドレス・電話番号・位置情報の入力や取得、アクセス解析は行いません。</p><p>このブラウザには当日の券番号を保存します。お店のサーバーにはランダムな券番号・当日の抽選結果・使用日時を保存し、日付が変わった後の次のアクセス時に前日分を削除します。</p><p>同じブラウザで1日1回です。ブラウザのデータを削除すると結果を復元できません。別端末を含む本人単位の制限はしていません。</p><p>GitHub・Googleはサービス運用上、IPアドレスなどの通信記録を保持する場合があります。</p></details><noscript><p class="error">おみくじを引くにはJavaScriptを有効にしてください。</p></noscript>
   </main>
 </body>
 </html>
