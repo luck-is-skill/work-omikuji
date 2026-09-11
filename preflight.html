@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#831a16">
+  <meta name="description" content="たまゆら くみやま野村店の作業服おみくじ。今日の仕事運・安全運、お告げ、ラッキーカラーと作業服を占おう。">
+  <title>作業服おみくじ｜たまゆら くみやま野村店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="refined.css">
+  <link rel="stylesheet" href="festival.css">
+  <script defer src="data.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="service.js"></script>
+  <script defer src="production-app.js"></script>
+</head>
+<body>
+  <main class="omikuji">
+    <header class="masthead">
+      <p class="shop">たまゆら くみやま野村店限定</p>
+      <div class="heading-row"><h1>作業服おみくじ</h1><span class="seal" aria-hidden="true">開運</span></div>
+      <p class="date" id="today"></p>
+    </header>
+    <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+      <div class="intro-art">
+        <img class="cloud cloud-one" src="deco-cloud.png" alt="" width="1254" height="1254">
+        <img class="plum" src="deco-plum.png" alt="" width="1254" height="1254">
+        <p class="vertical-copy">今日も、いい仕事を。</p>
+        <h2 id="welcome-title">あなたの今日に、<br><span>どんな福が来る？</span></h2>
+        <img class="wave" src="deco-wave.png" alt="" width="1254" height="1254">
+      </div>
+      <p class="intro-copy">仕事運も、今日の相棒も。<br>ひとつ引いて、のぞいてみよう。</p>
+      <button class="primary" id="draw-button" type="button">おみくじを引く <span aria-hidden="true">→</span></button>
+      <p class="trial-note">同じブラウザで1日1回・当日限り</p>
+    </section>
+    <section id="result" class="result" hidden aria-labelledby="result-title">
+      <div class="fortune-hero">
+        <p class="eyebrow">本日の運勢</p>
+        <h2 id="result-title" class="sr-only" tabindex="-1"></h2>
+        <img id="fortune-image" class="fortune-image" width="1536" height="1024" alt="">
+        <p class="fortune-ribbon">今日も、いい仕事を。</p>
+      </div>
+      <div class="readings">
+        <section class="reading"><div class="reading-heading"><img src="icon-work.png" width="1254" height="1254" alt=""><h3>仕事運</h3><span class="stars" id="work-stars"></span></div><p id="work-message"></p></section>
+        <section class="reading"><div class="reading-heading"><img src="icon-safety.png" width="1254" height="1254" alt=""><h3>安全運</h3><span class="stars" id="safety-stars"></span></div><p id="safety-message"></p></section>
+      </div>
+      <section class="oracle"><div class="section-heading"><img src="icon-oracle.png" width="1254" height="1254" alt=""><h3>今日のお告げ</h3></div><p id="oracle-message"></p><span class="oracle-rule" aria-hidden="true"></span></section>
+      <section class="lucky color-section"><div class="color-swatch" id="color-swatch" aria-hidden="true"></div><div><h3>ラッキーカラー</h3><p class="lucky-name" id="color-name"></p><p class="lucky-message" id="color-message"></p></div></section>
+      <section class="lucky wear-section"><img class="wear-icon" src="icon-workwear.png" width="1254" height="1254" alt=""><div><h3>今日のラッキー作業服</h3><p class="lucky-name" id="wear-name"></p><p class="lucky-message" id="wear-message"></p></div></section>
+      <section class="benefit-section" aria-labelledby="benefit-heading"><div class="section-heading"><img src="icon-benefit.png" width="1254" height="1254" alt=""><h3 id="benefit-heading">本日のご利益</h3></div>
+        <div class="benefit"><img id="benefit-frame" width="1536" height="1024" alt=""><div class="benefit-copy"><p id="benefit-top"></p><p id="benefit-main"></p></div></div>
+        <p class="terms" id="terms"></p><p class="benefit-notice" id="coupon-state"></p><p id="coupon-date"></p><p id="coupon-number" style="overflow-wrap:anywhere;font-family:monospace"></p><p>特典はスタッフの使用確認後に適用します。スクリーンショットのみではご利用いただけません。</p>
+      </section>
+      <button class="primary" id="again-button" type="button">券の状態を確認</button>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <p id="error" class="error" role="alert" hidden></p>
+    <footer><span>今日も一日、ご安全に。</span><small>たまゆら くみやま野村店</small></footer>
+    <details style="margin:24px 12px;font-size:13px"><summary>参加方法と情報の取り扱い</summary><p>ログインは不要です。氏名・メールアドレス・電話番号・位置情報の入力や取得、アクセス解析は行いません。</p><p>このブラウザには当日の券番号を保存します。お店のサーバーにはランダムな券番号・当日の抽選結果・使用日時を保存し、日付が変わった後の次のアクセス時に前日分を削除します。</p><p>同じブラウザで1日1回です。ブラウザのデータを削除すると結果を復元できません。別端末を含む本人単位の制限はしていません。</p><p>GitHub・Googleはサービス運用上、IPアドレスなどの通信記録を保持する場合があります。</p></details><noscript><p class="error">おみくじを引くにはJavaScriptを有効にしてください。</p></noscript>
+  </main>
+</body>
+</html>

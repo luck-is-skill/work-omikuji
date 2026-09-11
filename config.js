@@ -1,0 +1,1 @@
+window.OMIKUJI_SERVICE_URL = 'https://script.google.com/macros/s/AKfycbygvzyCYAxgCjXnfib18ySDR2SMHNwvh3s-s7aTisuWSFCz24GuInyi5PfYu0px7GM/exec';
