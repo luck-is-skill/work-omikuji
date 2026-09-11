@@ -1,0 +1,52 @@
+/* 和紙、朱、墨、金箔を軸にした第2版。文章はすべてHTMLのまま。 */
+:root{--ink:#231810;--red:#991c17;--gold:#a8792d;--paper:#fff9ed;--serif:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;--brush:"Yuji Syuku","HGP行書体","HG行書体",var(--serif);font-family:var(--serif);font-weight:500}
+.omikuji{max-width:560px;border:1px solid #a8792d;outline:1px solid #a8792d;outline-offset:6px}
+.masthead{position:relative;background:#201b17 url("bg-sumi-black.png") center/cover;color:#fff9e8;padding:24px 20px 22px;border-bottom:3px double #b88a37}
+.shop{color:#f4dc9f;letter-spacing:.08em;font-weight:600;margin-bottom:13px}
+.heading-row{gap:14px}
+h1{font-family:var(--brush);font-weight:400;font-size:clamp(2.1rem,8.3vw,2.9rem);line-height:1.5;letter-spacing:.015em}
+.seal{color:#f4dfbb;background:#9f201a;border:1px solid #d39a52;font-family:var(--brush);font-size:1rem;padding:5px 4px;transform:rotate(4deg)}
+.date{color:#e4cfaa;font-family:var(--serif);font-size:.875rem;margin-top:8px}
+.welcome{padding:0 26px 24px}
+.intro-art{min-height:255px}
+.intro-art h2{font-family:var(--brush);font-weight:400;font-size:clamp(1.8rem,6.8vw,2.3rem);line-height:1.85;letter-spacing:.015em}
+.vertical-copy{font-family:var(--brush);font-size:1rem;right:-7px;top:25px}
+.plum{width:80px;height:80px;left:-19px;top:17px}
+.wave{width:120px;height:120px;bottom:0;opacity:.8}
+.cloud{width:145px;height:145px;right:-5px;top:130px;opacity:.55}
+.intro-copy{font-family:var(--serif);line-height:2.1;color:#56412c;margin-bottom:25px}
+.primary{border-radius:0;border:1px solid #b2843b;background:linear-gradient(115deg,#af271e,#8e1914);font-family:var(--brush);font-size:1.45rem;font-weight:400;letter-spacing:.08em;padding:12px;box-shadow:inset 0 0 0 3px #971e17,inset 0 0 0 4px #d2a657,0 3px 0 #5f241a}
+.trial-note,.benefit-notice,.terms,.status{font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif}
+.result{padding:0 20px 27px}
+.fortune-hero{padding:22px 0 12px}
+.eyebrow{font-family:var(--brush);font-size:1.15rem;letter-spacing:.16em;color:#78501d}
+.fortune-image{width:calc(100% + 20px);max-width:none;margin:0 -10px 6px}
+.readings{border:1px solid #bc9653;background:#fffdf466;box-shadow:inset 0 0 0 4px #fff9e8,inset 0 0 0 5px #dfc89a}
+.reading{padding:20px 19px}
+.reading+.reading{border-top:1px solid #d5bd8a}
+.reading-heading{gap:10px;margin-bottom:9px}
+.reading-heading img{width:34px;height:34px}
+.reading-heading h3{font-family:var(--brush);font-size:1.4rem;font-weight:400}
+.stars{font-family:serif;font-size:1.3rem;letter-spacing:.08em}
+.reading p{font-family:var(--serif);font-size:1rem;line-height:1.95;color:#35291e}
+.oracle{position:relative;margin:25px 0;padding:23px 17px 25px;background:#f2e3c566;border-top:2px solid #bb975b;border-bottom:1px solid #bb975b}
+.section-heading h3{font-family:var(--brush);font-weight:400;font-size:1.55rem}
+.section-heading{gap:8px;margin-bottom:16px}
+.oracle p{font-family:var(--serif);font-size:1.25rem;font-weight:700;line-height:2.05;text-align:left}
+.oracle-rule{width:74px;background:#ae251c;height:3px;margin:19px auto 0}
+.lucky{border-top:0;border-bottom:1px solid #c9af7e;padding:18px 8px 23px;grid-template-columns:48px minmax(0,1fr)}
+.lucky h3{font-family:var(--brush);font-size:1.15rem;color:#755022;font-weight:400}
+.lucky-name{font-family:var(--serif);font-size:1.3rem;font-weight:900;margin:5px 0 7px}
+.lucky-message{font-family:var(--serif);line-height:1.95}
+.wear-icon{width:48px;height:60px}
+.benefit-section{border-top:0;padding-top:28px}
+.benefit-section .section-heading{margin-bottom:0}
+#benefit-top{font-family:var(--serif);font-size:1rem;font-weight:700}
+#benefit-main{font-family:var(--serif);font-size:1.85rem;font-weight:900;letter-spacing:-.02em}
+#benefit-main strong{font-size:clamp(2.7rem,11vw,4.2rem);line-height:1.2}
+.benefit-copy{width:68%;padding:15% 0}
+footer{background:#211c17 url("bg-sumi-black.png") center/cover;color:#f5e9ce;border-top:3px double #b88a37;padding:25px 12px}
+footer span{font-family:var(--brush);font-size:1.45rem;font-weight:400}
+footer small{color:#d8c4a1;font-family:var(--serif)}
+@media(max-width:560px){.omikuji{outline:0;border:0}.masthead{padding-top:21px}}
+@media(max-width:360px){.result{padding-left:14px;padding-right:14px}.reading{padding:17px 13px}.reading-heading{gap:7px}.reading-heading h3{font-size:1.25rem}.stars{font-size:1.1rem}.intro-art h2{font-size:1.7rem}.welcome{padding-left:20px;padding-right:20px}.vertical-copy{right:-13px}.oracle p{font-size:1.15rem}}

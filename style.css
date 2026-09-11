@@ -1,0 +1,71 @@
+:root{color-scheme:light;--ink:#32251d;--red:#941c17;--gold:#b88a37;--paper:#fff8e9;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:#201c18 url("bg-sumi-black.png") center/cover fixed;font-size:1rem;line-height:1.75}
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:3px solid #276597;outline-offset:5px}
+button:disabled{cursor:wait;opacity:.7}
+[hidden]{display:none!important}
+.omikuji{max-width:520px;margin:32px auto;min-height:calc(100svh - 64px);background:var(--paper) url("bg-washi-ivory.png") center top/640px;border:1px solid #b88a37;box-shadow:0 12px 60px #0006;overflow:hidden}
+.masthead{padding:25px 24px 15px;text-align:center;border-bottom:1px solid #c7a765}
+.shop{display:inline-block;margin:0 0 10px;color:var(--red);font-size:.875rem;font-weight:700;letter-spacing:.06em}
+.heading-row{display:flex;justify-content:center;align-items:center;gap:12px}
+h1,h2,h3,p{margin:0}
+h1{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(1.6rem,6.5vw,2.05rem);font-weight:900;letter-spacing:.06em}
+.seal{border:2px solid var(--red);padding:3px;color:var(--red);font-family:serif;font-size:.875rem;line-height:1.15;writing-mode:vertical-rl;transform:rotate(5deg)}
+.date{font-size:.875rem;color:#6c5942;margin-top:7px}
+.welcome{padding:0 24px 10px;text-align:center}
+.intro-art{position:relative;isolation:isolate;min-height:240px;display:grid;place-content:center}
+.intro-art h2{position:relative;z-index:2;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(1.55rem,6vw,2rem);line-height:1.9;font-weight:800;letter-spacing:.08em}
+.intro-art h2 span{color:var(--red)}
+.vertical-copy{position:absolute;right:2px;top:26px;writing-mode:vertical-rl;font-family:serif;font-size:.875rem;letter-spacing:.14em}
+.plum{position:absolute;width:90px;height:90px;left:-16px;top:9px;opacity:.9}
+.cloud{position:absolute;object-fit:contain;width:155px;height:155px;right:0;top:116px;z-index:-1;opacity:.5}
+.wave{position:absolute;width:105px;height:105px;left:-12px;bottom:-7px;opacity:.65;z-index:-1}
+.intro-copy{margin:7px 0 24px;font-size:1rem}
+.primary{display:flex;align-items:center;justify-content:center;gap:20px;background:linear-gradient(120deg,#ad281c,#761813);color:#fff9e8;border:1px solid #bf914b;border-radius:5px;box-shadow:inset 0 0 0 3px #ffffff12,0 4px 0 #5a211d;width:100%;padding:16px 12px;min-height:60px;font-size:1.125rem;font-weight:700;letter-spacing:.1em}
+.primary:hover:not(:disabled){background:#741c16}
+.primary:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 0 0 3px #ffffff12}
+.trial-note{margin-top:16px;font-size:.875rem;color:#75624d}
+.result{padding:0 22px 20px}
+.fortune-hero{text-align:center;padding-top:18px}
+.eyebrow{font-size:.875rem;letter-spacing:.24em;color:#745320}
+.fortune-image{display:block;width:100%;height:auto;aspect-ratio:3/2;margin:2px auto 10px;object-fit:contain}
+.readings{border-top:1px solid #c5a566;border-bottom:1px solid #c5a566}
+.reading{padding:18px 4px}
+.reading+.reading{border-top:1px dashed #c6ae82}
+.reading-heading{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:5px}
+.reading-heading img,.section-heading img{width:34px;height:34px;object-fit:contain;flex-shrink:0}
+h3{font-size:1rem;font-weight:700}
+.stars{margin-left:auto;font-size:1.2rem;letter-spacing:.09em;color:#ad2118;line-height:1.4;white-space:nowrap}
+.stars .empty{color:#9b8f7d}
+.reading p{color:#504331}
+.oracle{text-align:center;padding:25px 10px 23px}
+.section-heading{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:13px}
+.oracle p{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.3rem;line-height:1.95;font-weight:700;overflow-wrap:anywhere}
+.oracle-rule{display:block;background:var(--gold);width:46px;height:2px;margin:20px auto 0;transform:rotate(-3deg)}
+.lucky{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:22px 4px;border-top:1px solid #d7c49e;align-items:start}
+.color-swatch{width:44px;height:44px;border:1px solid #94866c;border-radius:50%;margin:6px auto;box-shadow:0 0 0 4px #fff8e9,0 0 0 5px #d5bd8d}
+.lucky h3{font-size:.875rem;color:#715d43;font-weight:500}
+.lucky-name{font-size:1.25rem;font-weight:700;margin:3px 0 6px;line-height:1.6;overflow-wrap:anywhere}
+.lucky-message{font-size:1rem}
+.wear-icon{width:52px;height:60px;object-fit:contain}
+.benefit-section{padding:20px 0 24px;border-top:1px solid #d7c49e;text-align:center}
+.benefit{position:relative;aspect-ratio:3/2;display:grid;place-items:center}
+.benefit>img{position:absolute;width:100%;height:100%;object-fit:contain;inset:0}
+.benefit-copy{position:relative;width:68%;padding:18% 0;line-height:1.5}
+#benefit-top{font-size:.875rem;font-weight:700}
+#benefit-main{color:var(--red);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:2rem;font-weight:900;margin-top:4px;line-height:1.5;overflow-wrap:anywhere}
+#benefit-main strong{font-size:3.1rem}
+.terms{font-size:.875rem;color:#66543c;margin:9px 10px 0}
+.benefit-notice{font-size:.875rem;color:#6f5141;margin:10px 12px 0}
+.status{text-align:center;font-size:.875rem;color:#70553c;padding:0 20px;min-height:1.75em}
+.error{padding:12px 20px;margin:12px;color:#8c1d19;background:#fff0e7;border:1px solid #b64733}
+footer{text-align:center;padding:24px 15px;border-top:1px solid #d3bb8c;background:#ffffff30}
+footer span{font-family:serif;letter-spacing:.15em;font-size:1rem}
+footer small{display:block;font-size:.875rem;margin-top:6px;color:#72614b}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.revealing .fortune-image{animation:reveal .65s ease-out both}
+@keyframes reveal{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
+@media(max-width:560px){.omikuji{margin:0;border:0;min-height:100svh;box-shadow:none}.masthead{padding-top:20px}}
+@media(max-width:360px){.result{padding-left:16px;padding-right:16px}.welcome{padding-left:20px;padding-right:20px}.stars{font-size:1.1rem}.intro-art h2{letter-spacing:0}.vertical-copy{right:-7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}

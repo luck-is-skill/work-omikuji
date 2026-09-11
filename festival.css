@@ -1,0 +1,52 @@
+/* 第3版: 金箔の祝祭背景と、文字を載せる明るい木札。 */
+body{background:#4a2111 url("bg-festive-gold.png") center top/cover fixed}
+.omikuji{max-width:600px;background:#eebe47 url("bg-festive-gold.png") center top/100% auto repeat-y;border:2px solid #e1b74d;outline-color:#86190e}
+.masthead{background:linear-gradient(110deg,#a8100bf5,#d42817e8);border-bottom:4px double #fbe2a0;padding:16px 16px 14px}
+.shop{color:#fff5d5;margin-bottom:5px;text-shadow:0 1px 2px #650b08}
+h1{color:#fff6d6;text-shadow:0 2px 0 #7d170f}
+.date{color:#fff0bc}
+.seal{background:#1f1610;color:#f7d573;border:1px solid #f2cb67}
+.welcome{padding:0 24px 22px}
+.intro-art{min-height:285px}
+.intro-art h2{font-size:clamp(2rem,7.6vw,2.7rem);text-shadow:0 1px 0 #fff7c9,0 0 15px #fff5c8}
+.intro-art h2 span{color:#ad150d}
+.plum{width:100px;height:100px;left:-18px;top:10px;opacity:1}
+.wave{opacity:1;width:135px;height:135px}
+.intro-copy{display:inline-block;padding:12px 24px;background:#fff4d6e8;border-top:1px solid #b58130;border-bottom:1px solid #b58130;color:#3e2414;font-weight:700}
+.trial-note,.status{color:#38200d;font-weight:600}
+.result{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px;padding:0 22px 25px}
+.fortune-hero{grid-column:1/-1;padding:14px 0 7px}
+.eyebrow{color:#6b2b0e;background:#fff0b7d9;display:inline-block;padding:1px 20px;border-radius:2px}
+.fortune-image{width:calc(100% + 36px);margin:-1px -18px -10px;filter:drop-shadow(0 3px 2px #7b2d1740)}
+.fortune-ribbon{position:relative;margin:0 4px;padding:10px 8px;color:#fffbe4;background:linear-gradient(100deg,#a70908,#d42113,#9f0907);border:3px double #ffdc7c;box-shadow:0 4px 9px #9c4d2555;font-family:var(--brush);font-size:clamp(1.35rem,5.4vw,1.9rem);letter-spacing:.07em}
+.oracle{grid-column:1/-1;grid-row:2;margin:0;padding:19px 20px;background:linear-gradient(#fff9e838,#fff9e838),url("bg-hinoki-light.png") center/560px;border:2px solid #bd8734;box-shadow:inset 5px 0 #a37329,inset -5px 0 #a37329,0 3px 8px #88581933}
+.oracle .section-heading{margin-bottom:8px}
+.oracle p{text-align:center;font-size:1.2rem;line-height:1.9;color:#221408}
+.oracle-rule{display:none}
+.readings{grid-column:1/-1;background:linear-gradient(#fffaf063,#fffaf063),url("bg-hinoki-light.png") center/560px;border:1px solid #bf923f;box-shadow:inset 0 0 0 4px #ffedbf80}
+.reading p{color:#2f1c0d}
+.stars{color:#dd190d}
+.lucky{grid-template-columns:minmax(0,1fr);gap:7px;text-align:center;margin:0;padding:15px 12px;background:linear-gradient(#fffaf060,#fffaf060),url("bg-hinoki-light.png") center/420px;border:1px solid #c3923e;box-shadow:inset 0 0 0 3px #ffedbf88;align-content:start}
+.lucky>div{min-width:0}
+.lucky-name{font-size:1.15rem}
+.lucky h3{color:#5c2c0d;font-size:1.05rem}
+.lucky-message{font-size:1rem;text-align:left;line-height:1.85}
+.wear-icon{margin:auto;width:48px;height:48px}
+.color-swatch{margin:3px auto;width:42px;height:42px}
+.benefit-section{grid-column:1/-1;border:0;padding:14px 0 7px;text-align:center}
+.benefit-section>.section-heading{position:relative;z-index:1;width:80%;margin:0 auto -15px;padding:7px 8px;color:#fff8d8;background:linear-gradient(100deg,#b21009,#dc2715,#a50907);border:3px double #ffe395;box-shadow:0 3px 5px #6a300c55}
+.benefit-section>.section-heading img{display:none}
+.benefit-section>.section-heading h3{font-size:1.55rem}
+.benefit{isolation:isolate}
+.benefit:before{content:"";position:absolute;z-index:-1;inset:15% 9%;background:linear-gradient(#fffcef77,#fffcef77),url("bg-hinoki-light.png") center/500px}
+.benefit-copy{padding:15% 0;width:69%}
+#benefit-top{font-size:clamp(1rem,3.8vw,1.35rem);color:#251507}
+#benefit-main{font-size:clamp(1.65rem,6vw,2.5rem);color:#d2190c;line-height:1.4}
+#benefit-main strong{font-size:clamp(3rem,14vw,5.4rem)}
+.terms,.benefit-notice{background:#fff5dbe8;display:block;margin:5px 9px 0;padding:5px 9px;color:#462e16;font-size:.875rem}
+#again-button{grid-column:1/-1}
+.primary{background:linear-gradient(110deg,#cc2316,#9d110a);border-color:#ffdb75}
+footer{border-top:4px double #efc253}
+@media(max-width:560px){.omikuji{border:0}}
+@media(max-width:360px){.result{gap:12px;padding:0 14px 20px}.lucky{padding:12px 9px}.oracle{padding:17px 14px}.oracle p{font-size:1.1rem}.intro-art h2{font-size:1.9rem}}
+@media(min-width:480px){.readings{grid-column:1;grid-row:3 / span 2}.color-section{grid-column:2;grid-row:3}.wear-section{grid-column:2;grid-row:4}.reading{padding:18px 15px}.reading-heading .stars{flex-basis:100%;margin-left:0}.lucky{grid-template-columns:40px minmax(0,1fr);text-align:left;gap:10px}.wear-icon{width:40px}.color-swatch{width:34px;height:34px}.benefit-section{grid-row:5}}
