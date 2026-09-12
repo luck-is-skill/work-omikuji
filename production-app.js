@@ -71,6 +71,7 @@
     current=ticket;render(ticket.result);
     setText('coupon-date','有効日：'+ticket.day+'（日本時間・当日限り）');
     const hasBenefit=Boolean(ticket.result.fortune.discount||ticket.result.fortune.stamps);
+    el('redeem-controls').hidden=!hasBenefit||Boolean(ticket.usedAt);
     setText('coupon-number',hasBenefit?'券番号：'+ticket.token:'');
     setText('coupon-state',!hasBenefit?'今日はお告げをお守りに。':ticket.usedAt?'使用済み（'+new Date(ticket.usedAt).toLocaleTimeString('ja-JP',{timeZone:'Asia/Tokyo'})+'）':'未使用・レジでこの画面をご提示ください');
     setText('status',ticket.usedAt?'この特典は使用済みです。':'本日の結果です。再度開いても同じ結果を表示します。');
@@ -98,8 +99,33 @@
     }catch(error){setText('status','');setText('error',error.message);el('error').hidden=false;}
     finally{busy=false;el('draw-button').disabled=false;el('again-button').disabled=false;}
   }
+  const dialog=el('redeem-dialog');
+  el('redeem-cancel').addEventListener('click',()=>dialog.close());
+  el('redeem-button').addEventListener('click',async()=>{
+    if(busy)return;
+    await perform('status');
+    if(!el('error').hidden||!current||current.usedAt)return;
+    const f=current.result.fortune;
+    if(!f.discount&&!f.stamps)return;
+    setText('redeem-benefit',f.discount?'商品1点 '+f.discount+'％OFF':'スタンプ'+f.stamps+'個');
+    dialog.showModal();
+  });
+  el('redeem-confirm').addEventListener('click',async()=>{
+    if(busy||!current||current.usedAt)return;
+    busy=true;el('redeem-confirm').disabled=true;el('error').hidden=true;
+    const ticket=current;dialog.close();setText('status','使用を確認しています…');
+    try{
+      const result=await service.call({action:'redeem',token:ticket.token,day:ticket.day,confirmUse:true});
+      display(result);
+      setText('status',result.alreadyUsed?'すでに使用済みです。特典を再適用しないでください。':'使用済みにしました。店員は特典を適用してください。');
+    }catch(error){
+      setText('status','');setText('error',error.message+' 券の状態を確認してから対応してください。');el('error').hidden=false;
+      el('redeem-controls').hidden=true;
+    }finally{busy=false;el('redeem-confirm').disabled=false;}
+  });
   el('draw-button').addEventListener('click',()=>perform('draw'));
   el('again-button').addEventListener('click',()=>perform('status'));
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current)perform('status');});
   perform('restore');
 })();
+

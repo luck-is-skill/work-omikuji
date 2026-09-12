@@ -15,7 +15,7 @@
   <script defer src="data.js"></script>
   <script defer src="config.js"></script>
   <script defer src="service.js"></script>
-  <script defer src="production-app.js"></script>
+  <script defer src="production-app.js?v=customer-redeem-1"></script>
 </head>
 <body>
   <main class="omikuji">
@@ -54,12 +54,25 @@
         <div class="benefit"><img id="benefit-frame" width="1536" height="1024" alt=""><div class="benefit-copy"><p id="benefit-top"></p><p id="benefit-main"></p></div></div>
         <p class="terms" id="terms"></p><p class="benefit-notice" id="coupon-state"></p><p id="coupon-date"></p><p id="coupon-number" style="overflow-wrap:anywhere;font-family:monospace"></p><p>特典はスタッフの使用確認後に適用します。スクリーンショットのみではご利用いただけません。</p>
       </section>
+      <section id="redeem-controls" hidden>
+        <p>ここから先は店員が操作します。お会計時にこの画面をお見せください。</p>
+        <button class="primary" id="redeem-button" type="button">店員確認・特典を使う</button>
+      </section>
+      <dialog id="redeem-dialog" aria-labelledby="redeem-title" style="max-width:420px;width:85%;padding:24px;border-radius:12px">
+        <h2 id="redeem-title">店員確認</h2>
+        <p id="redeem-benefit"></p>
+        <p>お会計にこの特典を適用しますか？使用済みにすると元に戻せません。</p>
+        <p>お客様は操作せず、店員に画面をお見せください。</p>
+        <button class="primary" id="redeem-confirm" type="button">確認して使用済みにする</button>
+        <button id="redeem-cancel" type="button" style="min-height:48px;margin-top:16px">キャンセル</button>
+      </dialog>
       <button class="primary" id="again-button" type="button">券の状態を確認</button>
     </section>
     <p id="status" class="status" role="status" aria-live="polite"></p>
     <p id="error" class="error" role="alert" hidden></p>
     <footer><span>今日も一日、ご安全に。</span><small>たまゆら くみやま野村店</small></footer>
-    <details style="margin:24px 12px;font-size:13px"><summary>参加方法と情報の取り扱い</summary><p>ログインは不要です。氏名・メールアドレス・電話番号・位置情報の入力や取得、アクセス解析は行いません。</p><p>このブラウザには当日の券番号を保存します。お店のサーバーにはランダムな券番号・当日の抽選結果・使用日時を保存し、日付が変わった後の次のアクセス時に前日分を削除します。</p><p>同じブラウザで1日1回です。ブラウザのデータを削除すると結果を復元できません。別端末を含む本人単位の制限はしていません。</p><p>GitHub・Googleはサービス運用上、IPアドレスなどの通信記録を保持する場合があります。</p></details><noscript><p class="error">おみくじを引くにはJavaScriptを有効にしてください。</p></noscript>
+    <details style="margin:24px 12px;font-size:13px"><summary>参加方法と情報の取り扱い</summary><p>ログインは不要です。氏名・メールアドレス・電話番号・位置情報の入力や取得、アクセス解析は行いません。</p><p>このブラウザには当日の券番号を保存します。お店のサーバーにはランダムな券番号・当日の抽選結果・使用日時を保存し、日付が変わった後の次のアクセス時にサーバー内の前日券を削除します。抽選・使用履歴と日ごとの匿名IDは、お店の管理シートに保存します。</p><p>同じブラウザで1日1回です。ブラウザのデータを削除すると結果を復元できません。別端末を含む本人単位の制限はしていません。</p><p>GitHub・Googleはサービス運用上、IPアドレスなどの通信記録を保持する場合があります。</p></details><noscript><p class="error">おみくじを引くにはJavaScriptを有効にしてください。</p></noscript>
   </main>
 </body>
 </html>
+
